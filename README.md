@@ -36,7 +36,7 @@ JDK8u71之前CC1、CC3，之后CC6
 
 [下表原链接](https://www.cnblogs.com/colo/p/15418938.html)
 
-|CC Chains|CC Version|JDK Version|Note|
+|Chains| Version       |JDK Version|Note|
 |---|---|---|---|
 |CC1|CC3.1 - 3.2.1|1.7（8u71之后已修复不可利用）||
 |CC2|CC4.0|暂无限制|javassist|
@@ -45,3 +45,4 @@ JDK8u71之前CC1、CC3，之后CC6
 |CC5|CC3.1 - 3.2.1|1.8 8u76（实测8u181也可）||
 |CC6|CC3.1 - 3.2.1|暂无限制||
 |CC7|CC3.1|||
+|CB1||jdk8 不受版本影响||
