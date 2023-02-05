@@ -20,7 +20,7 @@ public class Main {
         setFieldValue(comparator, "property", "outputProperties");
         setFieldValue(queue, "queue", new Object[]{obj, obj});
 
-//        FileStream.writeSer(queue,"CB1.ser");
+        FileStream.writeSer(queue,"CB1.ser");
         FileStream.readSer("CB1.ser");
 
     }
