@@ -5,7 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="661efc38-bb0c-4c6e-9dac-8a88fac3624e" name="变更" comment="new">
-      <change afterPath="$PROJECT_DIR$/FileUpload.ser" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CC2/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CC2/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CC2/CC2.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CC2/src/CC2_TemplatesImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../CC2/src/CC2_TemplatesImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CC2/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/../CC2/target/classes/Main.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,6 +100,7 @@
       <workItem from="1675596937587" duration="1827000" />
       <workItem from="1675598775896" duration="2723000" />
       <workItem from="1675601525841" duration="47000" />
+      <workItem from="1675680686254" duration="224000" />
     </task>
     <task id="LOCAL-00001" summary="new">
       <created>1675584400688</created>

