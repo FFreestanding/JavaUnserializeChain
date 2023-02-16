@@ -6,11 +6,8 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="CC1" />
+        <module name="ROME" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="CC1" target="1.8" />
-    </bytecodeTargetLevel>
   </component>
 </project>

