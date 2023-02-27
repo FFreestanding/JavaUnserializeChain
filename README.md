@@ -1,5 +1,5 @@
-## 配套小结链接
-[配套小结](https://github.com/FFreestanding/JavaUnserializeChain/blob/main/%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E6%BC%8F%E6%B4%9E%E5%B0%8F%E7%BB%93.md)
+## 反序列化学习小结链接
+[反序列化学习小结](https://github.com/FFreestanding/JavaUnserializeChain/blob/main/%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E6%BC%8F%E6%B4%9E%E5%B0%8F%E7%BB%93.md)
 ## 了解CC组件的链子
 
 Commons-Collections组件主要有两大版本：cc3和cc4
